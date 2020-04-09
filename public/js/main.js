@@ -17,7 +17,7 @@ socket.emit("joinRoom",{username,room})
 //Get room and users info
 socket.on("roomUsers",({room, users})=>{
     outputRoomName(room);
-    //outputUsers(users);
+    outputUsers(users);
 });
 
   //Message from server
@@ -59,10 +59,10 @@ socket.on("roomUsers",({room, users})=>{
   }
 
   //adding users to DOM
-//   function outputUsers(users){
-//       userList.innerHTML = `
-//       ${users.map(user=>`<li>${user.username}</li>`).join("")}
-//       `;//join method because it is an array
-// //       console.log(users);
-// }
+  function outputUsers(users){
+      userList.innerHTML = `
+      ${users.map(user=>`<li>${user.username}</li>`).join("")}
+      `;//join method because it is an array
+//       console.log(users);
+}
 };

@@ -22,7 +22,7 @@ const botName = "Chat Bot";
 io.on("connection", socket => {
   //connection is a event  socket is a parameter
   socket.on("joinRoom", ({ username, room }) => {
-    //joininf in aparticular room
+    //joinin in a particular room
     const user = userJoin(socket.id, username, room);
     socket.join(user.room);
 
@@ -41,7 +41,7 @@ io.on("connection", socket => {
     //sending users and room info  1.when someone joins
     io.to(user.room).emit("roomUsers", {
       room: user.room,
-      user: getRoomUsers(user.room)
+      users: getRoomUsers(user.room)
     });
   });
 
